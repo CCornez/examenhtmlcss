@@ -162,8 +162,10 @@ body {
           width: 8px;
           border: 1px solid $graylight;
           border-radius: 50%;
+          transition: all 300ms;
         }
-        &.active::after {
+        &.active::after,
+        &:hover::after {
           background-color: $turqoise;
           border-color: $turqoise;
         }
@@ -219,6 +221,7 @@ body {
     top: calc(50% - 5rem);
     left: calc(50% - 5rem);
     text-align: center;
+    transition: all 300ms;
     &:hover {
       transform: scale(1.1);
     }
@@ -241,6 +244,11 @@ body {
       flex-direction: column;
       justify-content: space-between;
       padding-top: 30px;
+      transition: all 300ms;
+      &:hover {
+        transform: scale(1.1);
+        border: 1px solid $turqoise;
+      }
       div {
         display: block;
         margin-bottom: 10px;
@@ -273,6 +281,10 @@ body {
     .team {
       @include make-col(4, 10px);
       .person {
+        transition: all 300ms;
+        &:hover {
+          transform: scale(1.05);
+        }
         img {
           display: block;
           width: 100%;
@@ -308,6 +320,10 @@ body {
       @include make-col(6, 0px);
       .color {
         height: 200px;
+        transition: all 300ms;
+        &:hover {
+          border: 1px solid $turqoise;
+        }
       }
       #color1 {
         background-color: rgb(197, 197, 197);
