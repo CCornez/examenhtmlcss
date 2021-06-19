@@ -15,6 +15,22 @@ Single-colored icons can be modified like so:
 }
 ========================================== */
 
-.icon-library {
-  width: 1.0625em;
+.icon-play-circle-o {
+  width: 0.8571428571428571em;
+}
+
+.icon-mobile {
+  width: 0.42857142857142855em;
+}
+
+.icon-gamepad {
+  width: 1.0714285714285714em;
+}
+
+.icon-paint-brush {
+  width: 0.9988571428571428em;
+}
+
+.icon-pie-chart {
+  width: 0.9642857142857142em;
 }

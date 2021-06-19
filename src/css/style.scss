@@ -7,13 +7,447 @@
 html {
   font-size: 62.5%;
 }
-
-$oranje: orange;
-body {
-  margin: 10px;
+a {
+  color: $white;
+  text-decoration: none;
 }
-h1 {
-  color: $oranje;
-  font-size: 30px;
-  margin: 50px 0;
+.container {
+  width: 58%;
+  max-width: 1600px;
+  margin: 0 auto;
+}
+body {
+  background-color: pink;
+}
+.line {
+  position: relative;
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: -18px;
+    left: calc(50% - 25px);
+    height: 2px;
+    width: 50px;
+    background-color: $graylight;
+  }
+}
+.button {
+  margin: 0 auto;
+  display: block;
+  width: fit-content;
+  padding: 12px 17px;
+  font-family: $font_roboto;
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  color: $turqoise;
+  border: 1px solid $turqoise;
+  transition: all 300ms;
+  &:hover {
+    color: white;
+    background-color: $turqoise;
+  }
+}
+
+.content {
+  text-align: center;
+  margin: 0 auto;
+  padding-top: 70px;
+  padding-bottom: 70px;
+  h1 {
+    margin-bottom: 15px;
+    font-family: $font_playfair;
+    font-size: 2.2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: $graydark;
+  }
+  h2 {
+    margin-bottom: 70px;
+    font-family: $font_playfair;
+    font-size: 1.4rem;
+    color: $black;
+  }
+  p {
+    font-family: font_roboto;
+    font-size: 1.4rem;
+    color: $black;
+  }
+}
+
+.section1 {
+  background-image: url(../images/trees1.jpg);
+  background-size: cover;
+  background-position: center;
+  height: fit-content;
+  header {
+    padding-top: 15px;
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      .logo {
+        margin-right: auto;
+      }
+      ul {
+        display: flex;
+        li {
+          margin-right: 19px;
+          a {
+            font-family: $font_roboto;
+            font-size: 1.3rem;
+            padding: 5px;
+            text-transform: uppercase;
+            transition: all 300ms;
+            &:hover,
+            &.active {
+              color: $turqoise;
+            }
+          }
+          &:last-child {
+            margin-right: 0;
+          }
+        }
+      }
+      .hamburgerIcon {
+        display: none;
+        .hamburger {
+          width: 25px;
+          height: 2px;
+          background-color: $white;
+          margin: 6px 0;
+        }
+      }
+    }
+  }
+  .contenthead {
+    text-align: center;
+    margin: 0 auto;
+    width: 85%;
+    padding-top: 160px;
+    padding-bottom: 81px;
+    h1 {
+      margin-bottom: 55px;
+      font-family: $font_playfair;
+      font-size: 3.2rem;
+      font-weight: 900;
+      color: $white;
+      text-transform: capitalize;
+      &.line::after {
+        height: 1px;
+        background-color: $turqoise;
+        bottom: -25px;
+      }
+    }
+    p {
+      margin-bottom: 55px;
+      font-family: $font_roboto;
+      font-size: 1.4rem;
+      line-height: 2.4rem;
+      color: $graylight;
+    }
+    .button {
+      margin-bottom: 137px;
+    }
+    ul {
+      display: flex;
+      justify-content: space-between;
+      width: 55px;
+      margin: 0 auto;
+      li a {
+        position: relative;
+        &::after {
+          content: "";
+          position: absolute;
+          height: 8px;
+          width: 8px;
+          border: 1px solid $graylight;
+          border-radius: 50%;
+        }
+        &.active::after {
+          background-color: $turqoise;
+          border-color: $turqoise;
+        }
+      }
+    }
+  }
+}
+.section2 {
+  background-color: $white;
+  .content {
+    padding-bottom: 90px;
+    h2 {
+      margin-bottom: 60px;
+    }
+    > div {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 30px;
+      img {
+        margin: 0 auto;
+        display: block;
+        width: 40%;
+        height: auto;
+      }
+      div {
+        width: 50%;
+        text-align: start;
+
+        p {
+          line-height: 2.2rem;
+        }
+        p + p {
+          padding-top: 30px;
+        }
+      }
+    }
+  }
+}
+.section3 {
+  background-image: url(../images/skyline.jpg);
+  background-size: cover;
+  background-position: center;
+  height: 550px;
+  text-align: center;
+  position: relative;
+  a {
+    display: block;
+    font-size: 10rem;
+    height: 10rem;
+    width: 10rem;
+    position: absolute;
+    top: calc(50% - 5rem);
+    left: calc(50% - 5rem);
+    text-align: center;
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+  h2 {
+    padding-top: 355px;
+    font-family: font_roboto;
+    font-size: 1.6rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    color: $white;
+  }
+}
+.section4 {
+  background-color: $white;
+  .cols {
+    @include make-col(3, 45px);
+    a {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding-top: 30px;
+      div {
+        display: block;
+        margin-bottom: 10px;
+        font-size: 5.2rem;
+        color: $turqoise;
+      }
+      p {
+        font-family: font_roboto;
+        font-size: 1.4rem;
+        line-height: 2.2rem;
+        &:first-of-type {
+          line-height: normal;
+          font-weight: 900;
+          text-transform: uppercase;
+          margin-bottom: 10px;
+        }
+      }
+    }
+  }
+}
+.section5 {
+  background-image: url(../images/trees2.jpg);
+  background-size: cover;
+  background-position: center;
+  .content {
+    h1,
+    h2 {
+      color: $white;
+    }
+    .team {
+      @include make-col(4, 10px);
+      .person {
+        img {
+          display: block;
+          width: 100%;
+          height: auto;
+        }
+        .border {
+          padding: 20px 0 20px 0;
+          border: 1px solid $graylight;
+          p {
+            font-family: font_roboto;
+            font-size: 1.4rem;
+            text-transform: uppercase;
+            color: $graylight;
+            &:first-of-type {
+              font-weight: 900;
+              color: white;
+              padding-bottom: 10px;
+            }
+          }
+        }
+      }
+    }
+    a {
+      margin-top: 100px;
+    }
+  }
+}
+.section6 {
+  background-color: $white;
+  .content {
+    padding-bottom: 100px;
+    .colors {
+      @include make-col(6, 0px);
+      .color {
+        height: 200px;
+      }
+      #color1 {
+        background-color: rgb(197, 197, 197);
+      }
+      #color2 {
+        background-color: rgb(161, 161, 161);
+      }
+      #color3 {
+        background-color: rgb(134, 134, 134);
+      }
+      #color4 {
+        background-color: rgb(100, 100, 100);
+      }
+      #color5 {
+        background-color: rgb(231, 231, 231);
+      }
+      #color6 {
+        background-color: rgb(236, 225, 225);
+      }
+      #color7 {
+        background-color: rgb(129, 125, 125);
+      }
+      #color8 {
+        background-color: rgb(156, 154, 154);
+      }
+      #color9 {
+        background-color: rgb(236, 228, 228);
+      }
+      #color10 {
+        background-color: rgb(59, 58, 58);
+      }
+      #color11 {
+        background-color: rgb(134, 134, 134);
+      }
+      #color12 {
+        background-color: rgb(189, 183, 183);
+      }
+    }
+    a {
+      margin-top: 75px;
+    }
+  }
+}
+.section7 {
+  height: 74px;
+  background-color: $purple;
+  position: relative;
+  footer {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-family: font_roboto;
+    font-size: 1.4rem;
+    font-weight: 900;
+    color: $white;
+    transform: translate(-50%, -50%);
+  }
+}
+
+@media screen and (max-width: 1290px) {
+  .container {
+    width: 70%;
+  }
+}
+@media screen and (max-width: 1070px) {
+  .container {
+    width: 80%;
+  }
+}
+@media screen and (max-width: 970px) {
+  .container {
+    width: 90%;
+  }
+}
+@media screen and (max-width: 870px) {
+  .container {
+    width: 95%;
+  }
+  .section4 .cols {
+    @include make-col(2, 25px);
+  }
+}
+@media screen and (max-width: 750px) {
+  .section1 header nav {
+    flex-direction: column;
+    .logo {
+      margin-right: 0;
+      margin-bottom: 10px;
+    }
+  }
+  .section6 .content .colors {
+    @include make-col(4, 0px);
+  }
+}
+@media screen and (max-width: 580px) {
+  .section1 {
+    .contenthead {
+      padding-top: 100px;
+      padding-bottom: 41px;
+      .button {
+        margin-bottom: 80px;
+      }
+    }
+    header nav {
+      margin: 0 30px;
+      flex-direction: row;
+      ul {
+        display: none;
+      }
+      .hamburgerIcon {
+        display: block;
+      }
+    }
+  }
+  .section5 .content .team {
+    @include make-col(2, 10px);
+  }
+}
+@media screen and (max-width: 500px) {
+  .section2 .content > div {
+    flex-direction: column;
+    img {
+      margin-bottom: 20px;
+    }
+    div {
+      width: 100%;
+    }
+  }
+  .section4 .cols {
+    @include make-col(1, 25px);
+  }
+  .section6 .content .colors {
+    @include make-col(3, 0px);
+  }
+}
+@media screen and (max-width: 430px) {
+  .container {
+    width: 98%;
+  }
+  .section6 .content .colors {
+    @include make-col(2, 0px);
+  }
 }
